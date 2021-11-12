@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+
+namespace SortingListv1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+
+            int sm;
+            List<int> N = new List<int>();
+            //prompt user to enter something
+            Console.WriteLine("Enter numbers: ");
+
+            //Get all input that the user gives
+            for (int i = 0; i < 4;i++){
+                //converts String to Int
+                N.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            //print not sorted List
+            Console.WriteLine("\nOriginal List: ");
+            foreach(int n in N){
+            Console.WriteLine(n);
+            }
+
+            //Sort
+            N.Sort();
+
+            //print Sorted List
+            Console.WriteLine("\nList in Sorted Form: ");
+            foreach(int n in N){
+            Console.WriteLine(n);
+            }
+
+            //Adds annother number to the List
+            Console.WriteLine("\nEnter another number: ");
+            sm = Convert.ToInt32(Console.ReadLine());
+            N.Add(sm);
+            //Sort again the List
+            N.Sort();
+
+            //print the final Output
+            Console.WriteLine("\nInsert: {0}",sm);
+            foreach(int n in N){
+            Console.WriteLine(n);
+            }
+
+            Console.ReadKey(true);
+        }
+    }
+}
