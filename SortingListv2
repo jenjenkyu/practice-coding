@@ -1,0 +1,61 @@
+
+using System;
+using System.Collections.Generic;
+
+namespace SortingListv2
+{
+	class Program
+	{
+		//initializing a static List
+		static public List<int> Lst  = new List<int>();
+		
+		//method to put a number on the List
+		static void Enter(int m){
+			Lst.Add(m);
+		}
+		
+		//Sorthing method
+		static void SortThenPrint(){
+			Lst.Sort();
+			foreach(int l_num in Lst){
+				Console.WriteLine(l_num);
+			}
+		}
+		
+		public static void Main(string[] args)
+		{
+			
+			int i = 0;
+			int n = 0;
+			//prompt
+			Console.WriteLine("Enter 4 numbuers: ");
+			
+			//while condition to get the inputed numbers
+			while(i < 4){
+				Enter(Convert.ToInt32(Console.ReadLine()));
+				i++;
+			}
+			
+			//Prints the Unsorted List
+			Console.WriteLine("\nOriginal LIst: ");
+			foreach(int l_num in Lst){
+				Console.WriteLine(l_num);
+			}
+			
+			//calling the method to print the Sorted List
+			Console.WriteLine("\nSorted List: ");
+			SortThenPrint();
+			
+			//putting again a number on the list
+			Console.WriteLine("\nEnter another number");
+			n = Convert.ToInt32(Console.ReadLine());
+			Lst.Add(n);
+			
+			//calling the method to print the new Sorted List
+			Console.WriteLine("\nInsert {0}: ",n);
+			SortThenPrint();
+			
+			Console.ReadKey(true);
+		}
+	}
+}
